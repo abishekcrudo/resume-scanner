@@ -1,0 +1,11 @@
+# Stage 1
+python-docx
+pdfplumber
+pytest
+
+# Later stages (install when you reach them)
+# pandas            Stage 2: tables of results
+# scikit-learn      Stage 2 and 5: TF-IDF, similarity, classifiers
+# spacy             Stage 2: tokenizing and lemmatizing
+# sentence-transformers   Stage 4: embeddings
+# streamlit         The user interface

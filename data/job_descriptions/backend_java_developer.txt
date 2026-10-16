@@ -1,0 +1,13 @@
+Backend Java Developer
+
+We are hiring a backend developer to build and run the services behind our online ordering platform. You will design REST APIs, write and tune database queries, and ship services to the cloud with the rest of a small team.
+
+What you will do
+- Build and maintain back-end services in Java and Spring Boot.
+- Design and document REST APIs used by our web and mobile apps.
+- Write and optimise SQL queries.
+- Package services with Docker and deploy them to AWS.
+- Use Git, review code and write tests.
+
+Required skills
+Java, Spring Boot, REST API, SQL, Docker, Git, AWS
