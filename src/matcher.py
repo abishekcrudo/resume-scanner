@@ -3,36 +3,34 @@
 Your job: replace each `raise NotImplementedError` with working code.
 Run `pytest tests/test_matcher.py` after each function to check your work.
 """
+import re
 from pathlib import Path
-
 from src.reader import read_resume
 
-
 def find_skills(text: str, skills: list[str]) -> set[str]:
-    """Return the set of skills that appear in the text.
+    found = set()
+    for skill in skills:
+        words = skill.split()
+        core = r"\s+".join(re.escape(w) for w in words)
+        print("core is:",core)
 
-    - Ignore letter case.
-    - Match whole words only: "Java" must not match inside "JavaScript".
-    - Return each skill exactly as it was written in `skills`.
-    - Skills can have several words ("Spring Boot") or special
-      characters ("C++", ".NET").
+        pattern = r"(?<![\w+#])" + core + r"(?![\w+#])"
+        print("pattern is:",pattern)
 
-    Exercise 5.
-    """
-    raise NotImplementedError
+        if re.search(pattern, text, re.IGNORECASE):
+            found.add(skill)
+    return found
 
 
 def skill_match_score(found: set[str], required: list[str]) -> float:
-    """Return the percentage (0 to 100) of required skills that were found.
-
-    If `required` is empty, return 0.0 without crashing.
-
-    Exercise 6a.
-    """
-    raise NotImplementedError
+    if len(required) == 0:
+        return 0.0
+    return ((len(found & set(required)) / len(required)) * 100)
 
 
 def rank_resumes(folder, skills: list[str]) -> list[dict]:
+    print("folder here:",folder)
+    
     """Score every resume in `folder` and return the results, best first.
 
     Each result is a dict with these keys:

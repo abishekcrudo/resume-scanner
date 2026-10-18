@@ -7,12 +7,15 @@ from pathlib import Path
 
 
 def clean_text(text: str) -> str:
-    """Return the text in lowercase, with every run of whitespace
+    return " ".join(text.lower().split())
+
+    """
+    Return the text in lowercase, with every run of whitespace
     (spaces, tabs, newlines) collapsed into a single space and no
     leading or trailing whitespace.
-
     Exercise 1.
     """
+
     raise NotImplementedError
 
 

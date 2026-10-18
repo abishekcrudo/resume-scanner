@@ -9,10 +9,9 @@ SKILLS = ["Java", "Spring Boot", "REST API", "SQL", "Docker", "Git", "AWS"]
 
 
 # ---- Exercise 5: find_skills -------------------------------------------
-'''
+
 def test_find_skills_basic():
     assert find_skills("I know Java and SQL", ["Java", "SQL", "Docker"]) == {"Java", "SQL"}
-
 
 
 def test_find_skills_ignores_case():
@@ -27,7 +26,6 @@ def test_find_skills_matches_whole_words_only():
 def test_find_skills_handles_punctuation():
     assert find_skills("skills: java, sql.", ["Java", "SQL"]) == {"Java", "SQL"}
 
-
 def test_find_skills_multi_word_skill():
     assert find_skills("built spring boot services", ["Spring Boot"]) == {"Spring Boot"}
 
@@ -39,7 +37,6 @@ def test_find_skills_special_characters():
 def test_find_skills_stretch_c_is_not_c_plus_plus():
     assert find_skills("c++ developer", ["C"]) == set()
     assert find_skills("c and c#", ["C"]) == {"C"}
-
 
 # ---- Exercise 6a: skill_match_score ------------------------------------
 
@@ -68,7 +65,7 @@ def test_rank_resumes_is_sorted_best_first():
     scores = [r["score"] for r in results]
     assert scores == sorted(scores, reverse=True)
 
-
+'''
 def test_rank_resumes_result_shape():
     for r in rank_resumes(RESUMES, SKILLS):
         assert set(r) >= {"file", "score", "matched", "missing"}
