@@ -65,7 +65,7 @@ def test_rank_resumes_is_sorted_best_first():
     scores = [r["score"] for r in results]
     assert scores == sorted(scores, reverse=True)
 
-'''
+
 def test_rank_resumes_result_shape():
     for r in rank_resumes(RESUMES, SKILLS):
         assert set(r) >= {"file", "score", "matched", "missing"}
@@ -90,5 +90,3 @@ def test_rank_resumes_skips_other_file_types():
         assert [r["file"] for r in results] == ["01_priya_nair.docx"]
     finally:
         shutil.rmtree(folder)
-cls
-        '''

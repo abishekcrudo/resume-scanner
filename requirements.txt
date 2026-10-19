@@ -2,6 +2,7 @@
 python-docx
 pdfplumber
 pytest
+pypdf
 
 # Later stages (install when you reach them)
 # pandas            Stage 2: tables of results
